@@ -1,5 +1,13 @@
-﻿namespace Factory_Processing_and_Logistics_System.Components
+﻿using Factory_Processing_and_Logistics_System.Components.Items;
+
+namespace Factory_Processing_and_Logistics_System.Components
 {
+    /// <summary>
+    /// A bounded input buffer between machines and the quality checker.
+    /// Maintains a fixed-capacity main queue and an unbounded overflow waitlist.
+    /// Drains the waitlist automatically whenever a slot opens up to preserve FIFO order end-to-end.
+    /// All operations are thread-safe via lock.
+    /// </summary>
     internal class OrderLine
     {
         private readonly object _lock = new object();

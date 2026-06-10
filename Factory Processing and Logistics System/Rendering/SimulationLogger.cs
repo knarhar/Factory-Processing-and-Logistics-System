@@ -1,7 +1,13 @@
 ﻿using Factory_Processing_and_Logistics_System.Components;
+using Factory_Processing_and_Logistics_System.Components.Items;
 
 namespace Factory_Processing_and_Logistics_System.Rendering
 {
+    /// <summary>
+    /// Central logging and rendering component for the simulation.
+    /// Collects colored event messages from all pipeline stages, tracks pass/fail counts per item type,
+    /// renders the full simulation state to the console each tick, and prints the final summary on completion.
+    /// </summary>
     internal class SimulationLogger
     {
         private readonly RollingLog _log;

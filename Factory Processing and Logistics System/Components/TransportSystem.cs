@@ -1,7 +1,13 @@
-﻿using Factory_Processing_and_Logistics_System.Rendering;
+﻿using Factory_Processing_and_Logistics_System.Components.Items;
+using Factory_Processing_and_Logistics_System.Rendering;
 
 namespace Factory_Processing_and_Logistics_System.Components
 {
+    /// <summary>
+    /// Periodically collects items from Storage and delivers them to Stock.
+    /// Arrives every N ticks, picks up to its capacity using Storage.TakeOldestItem(),
+    /// and logs each arrival and delivery count.
+    /// </summary>
     internal class TransportSystem
     {
         private readonly Storage _storage;

@@ -1,7 +1,13 @@
-﻿using Factory_Processing_and_Logistics_System.Rendering;
+﻿using Factory_Processing_and_Logistics_System.Components.Items;
+using Factory_Processing_and_Logistics_System.Rendering;
 
 namespace Factory_Processing_and_Logistics_System.Components
 {
+    /// <summary>
+    /// Processes items from the order line one at a time with a random tick delay.
+    /// Uses a seeded Random instance for reproducible pass/fail outcomes based on a configured quality percentage.
+    /// Passed items move to Storage; failed items are discarded and logged.
+    /// </summary>
     internal class QualityChecker
     {
         private readonly OrderLine _orderLine;

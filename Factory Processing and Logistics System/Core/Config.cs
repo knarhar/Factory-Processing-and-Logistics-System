@@ -1,5 +1,10 @@
 ﻿namespace Factory_Processing_and_Logistics_System.Core
 {
+    /// <summary>
+    /// Reads and holds all simulation parameters via interactive console prompts at startup.
+    /// Each parameter has a validated default value the user can accept by pressing Enter.
+    /// Exposes all settings as public read-only properties consumed by the simulation and its components.
+    /// </summary>
     internal class Config
     {
         public int StartItem { get; private set; } = 100;

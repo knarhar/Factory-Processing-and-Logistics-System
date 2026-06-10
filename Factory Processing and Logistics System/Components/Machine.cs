@@ -1,8 +1,11 @@
-﻿namespace Factory_Processing_and_Logistics_System.Components
+﻿using Factory_Processing_and_Logistics_System.Components.Items;
+
+namespace Factory_Processing_and_Logistics_System.Components
 {
     /// <summary>
-    /// Produces items
-    /// 
+    /// Produces items of a fixed type at a configured tick interval up to a maximum count.
+    /// Uses a shared static counter with Interlocked.Increment to assign globally unique IDs
+    /// across all machine instances regardless of tick timing.
     /// </summary>
     internal class Machine
     {

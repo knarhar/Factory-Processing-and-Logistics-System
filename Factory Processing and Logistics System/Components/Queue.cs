@@ -1,7 +1,11 @@
-﻿namespace Factory_Processing_and_Logistics_System.Components
+﻿using Factory_Processing_and_Logistics_System.Components.Items;
+
+namespace Factory_Processing_and_Logistics_System.Components
 {
     /// <summary>
-    /// represents Queue data structure and used for order line component
+    /// A circular buffer implementation of a FIFO queue.
+    /// Supports both fixed-capacity (bounded) and resizable (unbounded) modes.
+    /// Resizing preserves logical order by walking from front to rear rather than copying raw slots.
     /// </summary>
     internal class Queue
     {

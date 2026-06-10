@@ -1,18 +1,10 @@
-﻿namespace Factory_Processing_and_Logistics_System.Components
+﻿namespace Factory_Processing_and_Logistics_System.Components.Items
 {
-    public enum ItemType
-    {
-        A = 1,
-        B = 2,
-        C = 3,
-    }
-
-    public enum ItemStatus
-    {
-        Accepted = 1,
-        Failed = 2,
-    }
-
+    /// <summary>
+    /// Represents a single unit moving through the pipeline.
+    /// Holds a globally unique ID, an item type (A/B/C), and a quality status stamped by the QualityChecker.
+    /// Implemented as a readonly struct for value semantics and immutability.
+    /// </summary>
     public readonly struct Item
     {
         public readonly ItemType Type;

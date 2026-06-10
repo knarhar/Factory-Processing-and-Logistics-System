@@ -1,9 +1,15 @@
 ﻿using Factory_Processing_and_Logistics_System.Components;
+using Factory_Processing_and_Logistics_System.Components.Items;
 using Factory_Processing_and_Logistics_System.Core;
 using Factory_Processing_and_Logistics_System.Rendering;
 
 namespace Factory_Processing_and_Logistics_System.MainSimulation
 {
+    /// <summary>
+    /// The main simulation engine. Wires all components together and drives the tick loop.
+    /// Each tick: machines produce, the quality checker processes, transport collects, and the state renders.
+    /// Stops automatically when all items have cleared the full pipeline, or immediately on Q keypress.
+    /// </summary>
     internal class Simulation
     {
         private readonly Config _config;

@@ -1,5 +1,12 @@
-﻿namespace Factory_Processing_and_Logistics_System.Components
+﻿using Factory_Processing_and_Logistics_System.Components.Items;
+
+namespace Factory_Processing_and_Logistics_System.Components
 {
+    /// <summary>
+    /// Abstract base class for grouped item storage.
+    /// Maintains one internal Queue per item type (A/B/C) with a shared capacity ceiling.
+    /// Provides thread-safe AddItem and CountByType operations inherited by Storage and Stock.
+    /// </summary>
     internal abstract class ItemShelf
     {
         protected readonly Queue[] _shelves;

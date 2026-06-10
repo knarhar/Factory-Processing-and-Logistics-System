@@ -1,5 +1,10 @@
 ﻿namespace Factory_Processing_and_Logistics_System.Rendering
 {
+    /// <summary>
+    /// A fixed-size circular event log that overwrites the oldest entry when full.
+    /// Stores message and color pairs for colored console output.
+    /// Exposes entries via an indexed getter to avoid Action or delegate dependencies.
+    /// </summary>
     internal class RollingLog
     {
         private readonly (string message, ConsoleColor color)[] _entries;
