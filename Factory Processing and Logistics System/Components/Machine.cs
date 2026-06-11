@@ -35,12 +35,12 @@ namespace Factory_Processing_and_Logistics_System.Components
 
         public Item? ProduceItem(int currentTick)
         {
-            if (currentTick - _lastProducedTick >= ProducingInterval
+            if (currentTick % ProducingInterval == 0
                 && _producedItemsCount < ItemsToProduce)
             {
-                _lastProducedTick = currentTick;
                 _producedItemsCount++;
                 int id = Interlocked.Increment(ref _globalId);
+                _lastProducedTick = currentTick;
                 return new Item(Type, id);
             }
             return null;

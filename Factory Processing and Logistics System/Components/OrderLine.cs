@@ -37,6 +37,7 @@ namespace Factory_Processing_and_Logistics_System.Components
                     {
                         _list.Enqueue(_waitList.Dequeue());
                         _waitlistCount--;
+                        _count++;
                     }
 
                     if (!_list.IsFull)

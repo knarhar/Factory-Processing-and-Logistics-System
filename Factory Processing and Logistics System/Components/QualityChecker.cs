@@ -59,7 +59,6 @@ namespace Factory_Processing_and_Logistics_System.Components
             _logger.RecordResult(processed.Type, passed);
 
             if (passed)
-            if (passed)
             {
                 if (!_storage.AddItem(processed))
                     _logger.Log($"[Tick {currentTick}] Item {processed.Id} passed but storage is full — dropped.", ConsoleColor.DarkRed);
